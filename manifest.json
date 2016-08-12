@@ -3,10 +3,19 @@
   "description": "copy code easily!",
   "version": "0.1",
   "minimum_chrome_version": "16.0.884",
-  "permissions": ["downloads", "<all_urls>"],
+  "permissions": ["tabs",  "http://*/*","https://*/*"],
   "browser_action": {	
   						"default_popup": "popup.html",
   						"default_icon":"icon.png"
   					},
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["core.css"],
+      "js": ["core.js"],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ],
   "manifest_version": 2
 }
