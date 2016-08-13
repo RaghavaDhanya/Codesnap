@@ -16,6 +16,7 @@ for(var i in list)
 }
 function copyclick(ele)
 {
+  window.getSelection().removeAllRanges();
   var range = document.createRange();
   range.selectNode(ele)
   window.getSelection().addRange(range);

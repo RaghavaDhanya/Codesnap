@@ -1,0 +1,15 @@
+button[id^=codesnap]
+{
+	background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition-duration: 0.4s
+}
+button[id^=codesnap]:hover
+{	background-color: #008CBA;
+
+}
