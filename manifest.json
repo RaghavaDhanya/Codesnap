@@ -11,7 +11,6 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "css": ["core.css"],
       "js": ["core.js"],
       "run_at": "document_end",
       "all_frames": true
