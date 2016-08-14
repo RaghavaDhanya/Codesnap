@@ -11,7 +11,7 @@ for(var i in list)
 
   var textnode = document.createTextNode("Copy");
   button.appendChild(textnode);
-  if(list[i].parentNode!=null && list[i].hasChildNodes())
+  if(list[i].parentNode!=null &&list[i].hasChildNodes())
   list[i].parentNode.insertBefore(button,list[i]);
 }
 function copyclick(ele)

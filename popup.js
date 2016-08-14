@@ -1,10 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-  var checkPageButton = document.getElementById('Button');
-  checkPageButton.addEventListener('click', function() {
-    console.log("clicked");
-
-  }, false);
-
+  
 chrome.storage.sync.get({"clip":"none"},function(items){
     if(items["clip"].toString()!="none")
     { 
@@ -14,15 +9,33 @@ chrome.storage.sync.get({"clip":"none"},function(items){
       for(var j=0;j<data.length;j++)
       {
         li=document.createElement("div");
+        div=document.createElement("div");
+        div.id="code";
         span=document.createElement("span");
-        span.onclick=function(){console.log("span");};
-        span.id="list";
-        span.appendChild(document.createTextNode((data[j]).timecopy.toString()));
+        pre=document.createElement("pre");
+        pre.appendChild(document.createTextNode(data[j].code.toString()));
+        pre.id="hide"+j.toString();
+       span.addEventListener('click', function()
+        {
+          console.log(this.id.slice(4));
+          collapse(this.id.slice(4));
+
+
+        });
+        span.id="list"+j.toString();
+        span.appendChild(document.createTextNode("> "+data[j].timecopy.toString()));
         li.appendChild(span);
         b=document.createElement("button");
+        b.id="b"+j.toString();
         b.appendChild(document.createTextNode("copy"));
+        b.addEventListener('click', function()
+        { 
+          copyclick(document.getElementById("hide"+this.id.slice(1)));
+        });
         li.appendChild(b);
+        div.appendChild(pre);
         myList.appendChild(li);
+        mylist.appendChild(div);
 
       }
       for(var i=data.length;i<10;i++)
@@ -33,5 +46,34 @@ chrome.storage.sync.get({"clip":"none"},function(items){
       } 
     }});
 
+
 }, false);
 
+function collapse(id) {
+  console.log(id);
+ if(document.getElementById("hide"+id).style.display=="inline")
+  document.getElementById("hide"+id).style.display="none";
+  else
+    document.getElementById("hide"+id).style.display="inline";
+
+}
+function copyclick(ele)
+{
+  if(ele.style.display!="inline")
+  collapse(ele.id.slice(4)); 
+  window.getSelection().removeAllRanges();
+  var range = document.createRange();
+  range.selectNode(ele)
+  window.getSelection().addRange(range);
+  try 
+  {   
+    var successful = document.execCommand('copy');  
+    var msg = successful ? 'successful' : 'unsuccessful';  
+    console.log('Copy ' + msg);  
+  } 
+  catch(err) 
+  {  
+    console.log('unable to copy');  
+  }    
+  window.getSelection().removeAllRanges();  
+}

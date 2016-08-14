@@ -5,10 +5,22 @@ button {
     border-radius: 5px;
     padding: 5px 5px;
 }
-span[id="list"] {
+span[id^="list"] {
   cursor: pointer;
   padding: 5px 5px;
 }
+div[id="code"]
+{
+	background: #bdb76b;
+}
 div {
   padding: 5px 5px;
+}
+pre[id^="hide"] {
+	display: none;
+	padding: 5px 5px;
+}
+h1{
+	text-align: center;
+	padding: 5px 5px;
 }
