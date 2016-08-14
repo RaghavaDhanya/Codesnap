@@ -1,0 +1,14 @@
+button {
+    background: blue;
+    color: white;
+    border: blue;
+    border-radius: 5px;
+    padding: 5px 5px;
+}
+span[id="list"] {
+  cursor: pointer;
+  padding: 5px 5px;
+}
+div {
+  padding: 5px 5px;
+}
