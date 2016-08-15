@@ -17,10 +17,7 @@ chrome.storage.sync.get({"clip":"none"},function(items){
         pre.id="hide"+j.toString();
        span.addEventListener('click', function()
         {
-          console.log(this.id.slice(4));
           collapse(this.id.slice(4));
-
-
         });
         span.id="list"+j.toString();
         span.appendChild(document.createTextNode("> "+data[j].timecopy.toString()));

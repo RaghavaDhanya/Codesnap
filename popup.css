@@ -1,26 +1,41 @@
 button {
-    background: blue;
+    background: #4CAF50;
     color: white;
     border: blue;
     border-radius: 5px;
     padding: 5px 5px;
+    float: right;
 }
 span[id^="list"] {
   cursor: pointer;
+  font-size: medium;
   padding: 5px 5px;
+  color: white;
+}
+div[id="mylist"]
+{
+  background-color:#03A9F4;
 }
 div[id="code"]
 {
-	background: #bdb76b;
+	background:#37474F; 
+  color: white;
 }
 div {
   padding: 5px 5px;
+
 }
 pre[id^="hide"] {
 	display: none;
 	padding: 5px 5px;
 }
-h1{
+h1,p{
 	text-align: center;
 	padding: 5px 5px;
+
+}
+html, body{
+  margin: 0;
+  background: #0288D1;
+  color: white; 
 }
