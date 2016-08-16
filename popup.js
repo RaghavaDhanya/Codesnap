@@ -1,11 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
   
+  clear=document.getElementById("Clear");
+  clear.addEventListener('click',function()
+  {
+    chrome.storage.sync.clear();
+  });
+var myList= document.getElementById('mylist');
 chrome.storage.sync.get({"clip":"none"},function(items){
     if(items["clip"].toString()!="none")
     { 
       var data=items["clip"];
       console.log(data);
-      var myList= document.getElementById('mylist');
       for(var j=0;j<data.length;j++)
       {
         li=document.createElement("div");
@@ -33,15 +38,15 @@ chrome.storage.sync.get({"clip":"none"},function(items){
         div.appendChild(pre);
         myList.appendChild(li);
         mylist.appendChild(div);
-
       }
-      for(var i=data.length;i<10;i++)
-      {
-        li=document.createElement("div");
-        li.appendChild(document.createTextNode(""));
-        myList.appendChild(li);
-      } 
-    }});
+    }
+    else
+    {
+      li=document.createElement("div");
+      li.appendChild(document.createTextNode("No items Yet"));
+      myList.appendChild(li);
+    }
+  });
 
 
 }, false);

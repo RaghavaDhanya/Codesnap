@@ -1,3 +1,6 @@
+button[id="Clear"]{
+  margin: 5px;
+}
 button {
     background: #4CAF50;
     color: white;
