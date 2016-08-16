@@ -20,7 +20,7 @@ chrome.storage.sync.get({"clip":"none"},function(items){
           collapse(this.id.slice(4));
         });
         span.id="list"+j.toString();
-        span.appendChild(document.createTextNode("> "+data[j].timecopy.toString()));
+        span.appendChild(document.createTextNode((j+1)+ ") "+data[j].timecopy.toString()));
         li.appendChild(span);
         b=document.createElement("button");
         b.id="b"+j.toString();
@@ -38,7 +38,7 @@ chrome.storage.sync.get({"clip":"none"},function(items){
       for(var i=data.length;i<10;i++)
       {
         li=document.createElement("div");
-        li.appendChild(document.createTextNode("Empty"));
+        li.appendChild(document.createTextNode(""));
         myList.appendChild(li);
       } 
     }});
