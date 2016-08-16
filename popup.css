@@ -9,6 +9,14 @@ button {
     padding: 5px 5px;
     float: right;
 }
+button:hover
+{ background-color: #dc962f;
+
+}
+button:active
+{
+  background-color: #4CAF50;
+}
 span[id^="list"] {
   cursor: pointer;
   font-size: medium;

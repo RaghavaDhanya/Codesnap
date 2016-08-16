@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
   clear.addEventListener('click',function()
   {
     chrome.storage.sync.clear();
+    window.close();
   });
 var myList= document.getElementById('mylist');
 chrome.storage.sync.get({"clip":"none"},function(items){
