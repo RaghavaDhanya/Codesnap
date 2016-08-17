@@ -16,4 +16,5 @@ button[id^=codesnap]:hover
 button[id^=codesnap]:active
 {
 	background-color: #4CAF50;
+
 }

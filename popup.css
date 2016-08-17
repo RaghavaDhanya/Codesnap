@@ -1,5 +1,24 @@
-button[id="Clear"]{
-  margin: 5px;
+div[id="clear_div"]{
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  background: #4CAF50;
+  border-radius: 30px;
+  float: right;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+ 
+}
+div[id="clear_div"]:hover
+{ background-color: #dc962f;
+
+}
+img[id="Clear"]{
+  
+  width: 14px;
+  height: 14px;
+  
+  margin: 8px;
+ 
 }
 button {
     background: #4CAF50;
@@ -24,7 +43,7 @@ span[id^="list"] {
   color: white;
 }
 div[id="mylist"]
-{
+{ padding: 10px;
   background-color:#03A9F4;
 }
 div[id="code"]
