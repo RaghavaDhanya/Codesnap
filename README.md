@@ -1,5 +1,5 @@
 # Codesnap
-A chrome extension which adds a copy button to  code segments in most websites.
+A chrome extension which adds a copy button to  code segments in most websites. The concept is, anything enclosed in \<pre> tag is important (doesn't matter if its code or not) so this extension provides a copy button to copy text from \<pre> tags directly. 
 ### How to use it?
 Just use the copy button to copy the code next to it, the code will be copied to your clipboard. 
 If you want to copy multiple code segments go ahead and copy, you can later review and copy to your clipboard using the Codesnap clipboard.
